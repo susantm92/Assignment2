@@ -14,6 +14,7 @@
                 <th><?= $this->Paginator->sort('crust') ?></th>
                 <th><?= $this->Paginator->sort('size') ?></th>
                 <th><?= $this->Paginator->sort('topping') ?></th>
+				<th><?= $this->Paginator->sort('cost')?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td><?= h($order->crust) ?></td>
                 <td><?= h($order->size) ?></td>
                 <td><?= h($order->topping) ?></td>
+				<td><?= h($order->cost) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id]) ?>

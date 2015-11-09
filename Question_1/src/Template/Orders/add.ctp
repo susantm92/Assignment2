@@ -1,6 +1,7 @@
 
 
 <h1>Pizza Info</h1>
+<link rel="stylesheet" href="../css/form.css" />
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -8,7 +9,7 @@
 		<li><?= $this->Html->link(__('Logout'), array('controller'=>'users', 'action'=>'login')) ?></li>
     </ul>
 </nav>
-<div class="orders form large-9 medium-8 columns content">
+<div class="orders form large-9 medium-8 columns content" id="main">
     <?= $this->Form->create($order) ?>
     <fieldset>
         <legend><?= __('Add Order') ?></legend>

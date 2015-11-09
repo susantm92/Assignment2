@@ -30,14 +30,53 @@ class OrdersController extends AppController
             $order = $this->Orders->patchEntity($order, $this->request->data);
 			//implode(',',$_POST['topping']);
            
+		   $toppingNumber=0;
+		   $crustCost=0;
+		   $sizeCost=0;
+		   $toppingCost=0;
+		   $totalCost=0;
+		   
+		   if($this->request->data['size']=='small')
+		   {
+			   $sizeCost=5;
+		   }
+		   else if($this->request->data['size']=='medium')
+		   {
+			   $sizeCost=10;
+		   }
+		   else if($this->request->data['size']=='large')
+		   {
+			   $sizeCost=15;
+		   }
+		   else if($this->request->data['size']=='xlarge')
+		   {
+			   $sizeCost=20;
+		   }
+		   else
+		   {
+			   $sizeCost=0;
+		   }
+		   
+		   if($this->request->data['crust']=='stuffed')
+		   {
+			   $crustCost=2;
+		   }
+		   else
+		   {
+			   $sizeCost=0;
+		   }
 		   
 		  // $model = ucfirst(Inflector::singularize($this->params['OrdersController']));
 		   $alltoppings="";
             foreach( $this->request->data['topping'] as $checkboxes) 
 			{
-                 $alltoppings.= $checkboxes .",";
+                 $alltoppings.= $checkboxes ."   ";
+				 $toppingNumber=$toppingNumber+1;
             }
 		   $order->topping = $alltoppings;
+		   
+		   $totalCost=$crustCost+$sizeCost+($toppingNumber-1)*0.50;
+		   $order->cost=$totalCost;
           
 		  $order->userId = $this->Auth->user('id');
         // You could also do the following

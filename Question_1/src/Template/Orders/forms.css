@@ -1,0 +1,12 @@
+#main
+{
+    display:block;
+    text-align:left;
+    padding: 20px; 
+    width: 350px;
+    height: 430px; 
+	background-color:#D8D8D8;
+	margin-left:750px;
+	margin:0 auto;
+	border:1px dotted black;
+}

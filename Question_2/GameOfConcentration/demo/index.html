@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Game Of Concentration</title>
+  <link rel="stylesheet" href="../css/game.css">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../js/jquery-1.7.1.min.js"><\/script>')</script>
+  <script src="../js/jquery-ui-1.8.17.custom.min.js"></script>
+  <script src="../js/jquery.flip.min.js"></script>
+  <script src="../js/jquery.quizymemorygame.js"></script>
+</head>
+<body id="main">
+  
+  <h1>Game Of Concentration</h1>
+  
+  <div id="main" role="main">
+    
+    <div id="tutorial-memorygame" class="memorygame">
+      <ul>
+          <li class="match1">
+            <img src="img/i1.png">
+          </li>
+          <li class="match2">
+            <img src="img/i2.jpe">
+          </li>
+          <li class="match3">
+            <img src="img/i3.jpg">
+          </li>
+          <li class="match4">
+            <img src="img/i4.jpg">
+          </li>
+          <li class="match5">
+            <img src="img/i5.png">
+          </li>
+          <li class="match6">
+            <img src="img/i6.jpg">
+          </li>
+          <li class="match1">
+            <img src="img/i1.png">
+          </li>
+          <li class="match2">
+             <img src="img/i2.jpe">
+          </li>
+          <li class="match3">
+              <img src="img/i3.jpg">
+          </li>
+          <li class="match4">
+            <img src="img/i4.jpg">
+          </li>
+          <li class="match5">
+            <img src="img/i5.png">
+          </li>
+          <li class="match6">
+           <img src="img/i6.jpg">
+          </li>
+      </ul>
+    </div>
+    
+    
+    <div class="reset-button">
+      <a id="restart" href="">Reset game</a>
+    </div>
+    
+ 
+  
+  <script>
+    var quizyParams = {itemWidth: 156, itemHeight: 156, itemsMargin:40, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:250, resultIcons:true, randomised:true }; 
+    $('#tutorial-memorygame').quizyMemoryGame(quizyParams);
+    $('#restart').click(function(){
+      $('#tutorial-memorygame').quizyMemoryGame('restart');
+      return false;
+    });
+  </script>
+
+</body>
+</html>
